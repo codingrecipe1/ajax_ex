@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex03</title>
+<!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button onclick="ex03Fn()">ex03 함수 호출</button>
+</body>
+<script>
+  const ex03Fn = () => {
+    const val1 = "Hello SpringBoot!!";
+
+    $.ajax({
+      // 요청방식: get
+      // 요청주소: /ex03
+      type: "get",
+      url: "/ex03",
+      // parameter 전달하기
+      data: {
+            "param1": val1,
+            "param2": "안녕"
+      },
+      // 요청이 성공했을 때 실행되는 부분
+      success: function(res) {
+        console.log("성공", res);
+      },
+      // 요청이 실패했을 때 실행되는 부분
+      error: function() {
+        console.log("실패");
+      }
+    })
+  }
+
+</script>
+</html>
